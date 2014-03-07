@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller - To-Do List-->
+        <!--To Do List - To-Do List-->
         <scene sceneID="Z8v-Df-7Ms">
             <objects>
-                <tableViewController id="Wlr-am-0gK" sceneMemberID="viewController">
+                <tableViewController id="Wlr-am-0gK" customClass="XYZToDoList" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FL2-hm-Sum">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -253,7 +253,7 @@
                     <navigationItem key="navigationItem" title="To-Do List" id="10k-Li-nhe">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="llD-0J-ixk">
                             <connections>
-                                <segue destination="VkA-CZ-Wbx" kind="push" id="GLp-xx-DYm"/>
+                                <segue destination="iPv-f8-5HX" kind="modal" id="GLp-xx-DYm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -262,10 +262,10 @@
             </objects>
             <point key="canvasLocation" x="657" y="-402"/>
         </scene>
-        <!--View Controller-->
+        <!--Add To Do Item - Add-to List-->
         <scene sceneID="klD-rj-YI3">
             <objects>
-                <viewController id="VkA-CZ-Wbx" sceneMemberID="viewController">
+                <viewController id="VkA-CZ-Wbx" customClass="XYZAddToDoItem" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Bp-nN-Z0G"/>
                         <viewControllerLayoutGuide type="bottom" id="hkg-xs-o3X"/>
@@ -274,7 +274,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add More!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M6G-hB-4at">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add More!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M6G-hB-4at">
                                 <rect key="frame" x="20" y="139" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -286,13 +286,42 @@
                             <constraint firstAttribute="trailing" secondItem="M6G-hB-4at" secondAttribute="trailing" constant="20" id="1WL-VM-xmI"/>
                             <constraint firstAttribute="centerX" secondItem="M6G-hB-4at" secondAttribute="centerX" id="Gt5-1Y-5zG"/>
                             <constraint firstItem="M6G-hB-4at" firstAttribute="leading" secondItem="yuP-Fh-2nl" secondAttribute="leading" constant="20" id="RP0-WH-D6h"/>
+                            <constraint firstItem="M6G-hB-4at" firstAttribute="top" secondItem="0Bp-nN-Z0G" secondAttribute="bottom" constant="75" id="vOj-fI-106"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tre-JT-sEv"/>
+                    <navigationItem key="navigationItem" title="Add-to List" id="tre-JT-sEv">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="ktq-Ed-7ed">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7jm-9H-e9n">
+                                <rect key="frame" x="16" y="5" width="71" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ho5-pA-M4C" kind="unwind" unwindAction="unwindToList:" id="GV7-M5-RtB"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="hom-HA-DTU">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1a0-EP-eJw">
+                                <rect key="frame" x="233" y="5" width="71" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Ho5-pA-M4C" kind="unwind" unwindAction="unwindToList:" id="7k6-zq-nG4"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xyf-Qt-TD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Ho5-pA-M4C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1147" y="-370"/>
+            <point key="canvasLocation" x="1681" y="-370"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AGj-av-FNr">
@@ -311,6 +340,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Cz-a0-rYl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136" y="-402"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UDg-pL-gIX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iPv-f8-5HX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="T3i-lo-cD4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hD0-p5-GSh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VkA-CZ-Wbx" kind="relationship" relationship="rootViewController" id="JmV-C8-WDe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uhk-gz-huv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1147" y="-370"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -20,6 +20,8 @@
 		20E6868118CA4B3E00298E42 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 20E6867F18CA4B3E00298E42 /* InfoPlist.strings */; };
 		20E6868318CA4B3E00298E42 /* AreebListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E6868218CA4B3E00298E42 /* AreebListTests.m */; };
 		20E6868D18CA4CE500298E42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E6868C18CA4CE500298E42 /* Main.storyboard */; };
+		20E6869618CA635600298E42 /* XYZAddToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E6869518CA635600298E42 /* XYZAddToDoItem.m */; };
+		20E6869C18CA656100298E42 /* XYZToDoList.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E6869B18CA656100298E42 /* XYZToDoList.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,10 @@
 		20E6868018CA4B3E00298E42 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		20E6868218CA4B3E00298E42 /* AreebListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreebListTests.m; sourceTree = "<group>"; };
 		20E6868C18CA4CE500298E42 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		20E6869418CA635600298E42 /* XYZAddToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZAddToDoItem.h; sourceTree = "<group>"; };
+		20E6869518CA635600298E42 /* XYZAddToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZAddToDoItem.m; sourceTree = "<group>"; };
+		20E6869A18CA656100298E42 /* XYZToDoList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZToDoList.h; sourceTree = "<group>"; };
+		20E6869B18CA656100298E42 /* XYZToDoList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZToDoList.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,10 @@
 				20E6866C18CA4B3E00298E42 /* XYZAppDelegate.h */,
 				20E6866D18CA4B3E00298E42 /* XYZAppDelegate.m */,
 				20E6868C18CA4CE500298E42 /* Main.storyboard */,
+				20E6869A18CA656100298E42 /* XYZToDoList.h */,
+				20E6869B18CA656100298E42 /* XYZToDoList.m */,
+				20E6869418CA635600298E42 /* XYZAddToDoItem.h */,
+				20E6869518CA635600298E42 /* XYZAddToDoItem.m */,
 				20E6866F18CA4B3E00298E42 /* Images.xcassets */,
 				20E6866418CA4B3E00298E42 /* Supporting Files */,
 			);
@@ -244,6 +254,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E6869618CA635600298E42 /* XYZAddToDoItem.m in Sources */,
+				20E6869C18CA656100298E42 /* XYZToDoList.m in Sources */,
 				20E6866E18CA4B3E00298E42 /* XYZAppDelegate.m in Sources */,
 				20E6866A18CA4B3E00298E42 /* main.m in Sources */,
 			);
@@ -446,6 +458,7 @@
 				20E6868818CA4B3E00298E42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20E6868918CA4B3E00298E42 /* Build configuration list for PBXNativeTarget "AreebListTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +467,7 @@
 				20E6868B18CA4B3E00298E42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
